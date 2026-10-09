@@ -1,0 +1,356 @@
+/* ── Hide sidebar ─────────────────────────────────────────────────────────── */
+.css-1d391kg { display: none; }
+
+/* ── Force light theme ────────────────────────────────────────────────────── */
+.stApp,
+.stApp > div,
+.main,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"],
+.main .block-container {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+* { color: inherit !important; }
+
+[data-testid="stHeader"] { background-color: transparent !important; }
+
+/* ── Main header ──────────────────────────────────────────────────────────── */
+.main-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.main-title {
+    color: white !important;
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+.main-subtitle {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Input & Results sections ─────────────────────────────────────────────── */
+.input-section {
+    background: #f8f9fa !important;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    color: #000000 !important;
+}
+
+.results-section {
+    background: white !important;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    color: #000000 !important;
+}
+
+/* ── Verdict containers ───────────────────────────────────────────────────── */
+.verdict-container {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.verdict-true    { background-color: #d4edda; border: 2px solid #28a745; color: #155724; }
+.verdict-false   { background-color: #f8d7da; border: 2px solid #dc3545; color: #721c24; }
+.verdict-partial { background-color: #fff3cd; border: 2px solid #ffc107; color: #856404; }
+.verdict-inconclusive { background-color: #d1ecf1; border: 2px solid #17a2b8; color: #0c5460; }
+
+/* ── Feature cards ────────────────────────────────────────────────────────── */
+.feature-card {
+    background: white !important;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    color: #000000 !important;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(102,126,234,0.05) 0%, rgba(118,75,162,0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+    border-left-color: #764ba2;
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50 !important;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-description {
+    color: #555 !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Section headers ──────────────────────────────────────────────────────── */
+.section-header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50 !important;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 2px;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.stButton > button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 1rem 3rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.4s ease !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    width: 100% !important;
+    height: 60px !important;
+}
+
+.stButton > button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.stButton > button:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+    color: white !important;
+}
+
+.stButton > button:hover::before { left: 100%; }
+.stButton > button:active { transform: translateY(-1px) !important; }
+.stButton > button:focus {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+    outline: none !important;
+}
+
+/* ── Radio buttons ────────────────────────────────────────────────────────── */
+.stRadio > div {
+    flex-direction: row !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+}
+
+.stRadio > div > label {
+    background: white !important;
+    padding: 1rem 1.5rem !important;
+    border-radius: 12px !important;
+    border: 3px solid #667eea !important;
+    transition: all 0.4s ease !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+    color: #000000 !important;
+    min-width: 150px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0.25rem !important;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2) !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.stRadio > div > label:hover {
+    border-color: #764ba2 !important;
+    background: #f8f9ff !important;
+    color: #000000 !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+}
+
+[data-theme="dark"] .stRadio > div > label,
+html[data-theme="dark"] .stRadio > div > label,
+.stRadio > div > label[data-baseweb="radio"],
+div[data-testid="stRadio"] > div > label {
+    background: white !important;
+    color: #000000 !important;
+    border: 3px solid #667eea !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: flex !important;
+    z-index: 999 !important;
+}
+
+.stRadio > div > label > div[data-testid="stMarkdownContainer"] > p,
+.stRadio > div > label > div > p,
+.stRadio label p {
+    color: #000000 !important;
+    margin: 0 !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    visibility: visible !important;
+}
+
+.stRadio > div > label[data-checked="true"],
+.stRadio > div > label:has(input:checked) {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-color: #667eea !important;
+    transform: scale(1.08) !important;
+    box-shadow: 0 0 30px rgba(102,126,234,0.8), 0 0 60px rgba(102,126,234,0.4), 0 8px 25px rgba(102,126,234,0.6) !important;
+    animation: glow-pulse 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes glow-pulse {
+    0%   { box-shadow: 0 0 20px rgba(102,126,234,0.6), 0 0 40px rgba(102,126,234,0.3), 0 8px 25px rgba(102,126,234,0.5); }
+    100% { box-shadow: 0 0 35px rgba(102,126,234,0.9), 0 0 70px rgba(102,126,234,0.5), 0 12px 35px rgba(102,126,234,0.7); }
+}
+
+.stRadio > div > label[data-checked="true"] > div[data-testid="stMarkdownContainer"] > p,
+.stRadio > div > label[data-checked="true"] > div > p,
+.stRadio > div > label:has(input:checked) p {
+    color: white !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ── Text & Textarea inputs ───────────────────────────────────────────────── */
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    background-color: white !important;
+    color: #000000 !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+}
+
+.stTextArea > div > div > textarea { resize: vertical !important; }
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+    outline: none !important;
+}
+
+/* ── File uploader ────────────────────────────────────────────────────────── */
+.stFileUploader > div > div {
+    background-color: white !important;
+    border: 2px dashed #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    text-align: center !important;
+}
+
+.stFileUploader > div > div:hover {
+    border-color: #667eea !important;
+    background-color: #f8f9ff !important;
+}
+
+/* ── Download button ──────────────────────────────────────────────────────── */
+.stDownloadButton > button {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    width: 100% !important;
+}
+
+.stDownloadButton > button:hover {
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3) !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .main-title    { font-size: 2.5rem; }
+    .main-subtitle { font-size: 1.2rem; }
+    .stRadio > div { flex-direction: column !important; }
+    .stRadio > div > label { min-width: 200px !important; }
+}

@@ -1,0 +1,46 @@
+research_task:
+  description: >
+    Research the given claim or content: {input_content}
+    
+    IMPORTANT INSTRUCTIONS:
+    - If the input contains "youtube.com" or "youtu.be", use the YouTube Transcript Tool to extract the video transcript first
+    - If it's a regular URL, use the ScrapeWebsiteTool to extract content
+    - If it's a direct claim, research it using web search
+    
+    Use web search to find authoritative sources that support or refute the claims.
+    Gather evidence from multiple reliable sources.
+  expected_output: >
+    A comprehensive research report with:
+    1. Content extracted (transcript for YouTube, text for websites, or original claim)
+    2. Key claims identified
+    3. Evidence from multiple sources
+    4. Source URLs and citations
+    5. Preliminary assessment of claim validity
+  agent: fact_researcher
+
+content_analysis_task:
+  description: >
+    Analyze the content and research findings to extract specific factual claims.
+    Break down complex content into individual verifiable statements.
+    Identify the main claims that need fact-checking.
+  expected_output: >
+    A structured analysis containing:
+    1. List of specific factual claims found in the content
+    2. Context for each claim
+    3. Supporting and contradicting evidence from research
+    4. Source reliability assessment
+  agent: content_analyzer
+
+verification_task:
+  description: >
+    Based on the research and analysis, make final fact-check determinations.
+    For each claim identified, provide a clear TRUE or FALSE verdict with detailed explanation.
+    Include confidence levels and source citations.
+  expected_output: >
+    Final fact-check report with:
+    1. Clear TRUE/FALSE determination for each verifiable claim
+    2. Confidence level (High/Medium/Low) for each determination
+    3. Detailed explanation of reasoning
+    4. Source citations and evidence
+    5. Summary conclusion
+  agent: fact_verifier
